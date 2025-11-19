@@ -72,6 +72,10 @@ section#ficha {
   grid-column: 2;
 }
 
+section#ficha p {
+  text-align: justify;
+}
+
 section#ficha img.foto {
   width: 200px;
   border-radius: 50%;
@@ -109,4 +113,29 @@ div#social a {
 
 div#social a:hover {
   color: var(--destaque-inverso);
+}
+
+section#detalhes {
+  grid-column: 2;
+}
+
+article {
+  background-color: var(--fundo-card);
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+article h2 {
+  color: var(--destaque);
+  margin-bottom: 10px;
+}
+
+article#formacao {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+article#formacao > h3, h4 {
+  width: 300px;
 }
