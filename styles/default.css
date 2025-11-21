@@ -21,6 +21,7 @@
   --destaque: #0077ff;
   --destaque-inverso: #66bbff;
   --fundo-card: #ffffff;
+  --transparent: #ffffff00;
 }
 
 body {
@@ -31,8 +32,9 @@ body {
 }
 
 header {
-  background-color: var(--destaque);
-  padding: 10px;
+  background-image: linear-gradient(to bottom, var(--destaque), var(--transparent));
+
+  padding: 15px;
   display: flex;
   justify-content: flex-end;
   align-content: center;
@@ -48,14 +50,13 @@ nav#menu ul > li > a {
   text-decoration: none;
   color: var(--texto-inverso);
   font-weight: 600;
-  padding: 12px 15px;
-  border-radius: 10px;
+  padding: 12px 12px;
+  border-radius: 50%;
   transition: background-color 0.5s, color 0.5s;
 }
 
 nav#menu ul > li > a:hover {
-  background-color: var(--destaque-inverso);
-  color: var(--destaque);
+  background-color: var(--destaque);
 }
 
 main {
@@ -128,7 +129,7 @@ article {
 
 article h2 {
   color: var(--destaque);
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 article#formacao {
@@ -138,4 +139,88 @@ article#formacao {
 
 article#formacao > h3, h4 {
   width: 300px;
+}
+
+#skill-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+
+#skill-container .info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#skill-container .nome {
+  font-weight: bold;
+  color: var(--texto);
+}
+
+#skill-container .porcent {
+  font-weight: bold;
+  color: var(--destaque);
+}
+
+#skill-container .barra {
+  width: 100%;
+  height: 8px;
+  background-color: var(--fundo-principal);
+  border-radius: 4px;
+}
+
+#skill-container .progresso {
+  width: 100%;
+  height: 100%;
+  background-color: var(--destaque-inverso);
+  border-radius: 4px;
+}
+
+#formacao-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+#formacao-container .curso {
+  background-color: var(--fundo-principal);
+  border-radius: 8px;
+  border-left: 5px solid var(--destaque);
+  padding-left: 12px;
+  transition: border-width .5s, border-color .5s;
+}
+
+#formacao-container .curso:hover {
+  border-left: 5px solid var(--destaque-inverso);
+  
+}
+
+#formacao-container .periodo {
+  font-size: 0.8em;
+  color: var(--texto);
+}
+
+#formacao-container .instituicao {
+  font-size: 0.8em;
+  font-weight: bold;
+  color: var(--texto);
+}
+
+#formacao-container .titulacao {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: var(--destaque);
+}
+
+@media screen and (min-width: 768px) {
+  #skill-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  #skill-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
