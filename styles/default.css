@@ -37,6 +37,10 @@ header {
   display: flex;
   justify-content: flex-end;
   align-content: center;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+
 }
 
 nav#menu ul {
@@ -240,6 +244,17 @@ article#formacao > h3, h4 {
   object-fit: cover;
   overflow: hidden;
   border-radius: 8px;
+}
+
+footer > p {
+  background-color: var(--destaque);
+  color: var(--texto-inverso);
+  text-align: center;
+  padding: 15px;
+}
+
+footer > p > a {
+  color: var(--texto-inverso);
 }
 
 @media screen and (min-width: 768px) {
