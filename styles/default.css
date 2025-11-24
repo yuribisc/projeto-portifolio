@@ -138,7 +138,7 @@ article h2 {
 
 article#formacao {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column wrap;
 }
 
 article#formacao > h3, h4 {
@@ -182,8 +182,8 @@ article#formacao > h3, h4 {
 }
 
 #formacao-container {
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
   gap: 20px;
 }
 
@@ -197,7 +197,6 @@ article#formacao > h3, h4 {
 
 #formacao-container .curso:hover {
   border-left: 5px solid var(--destaque-inverso);
-  
 }
 
 #formacao-container .periodo {
@@ -247,6 +246,7 @@ article#formacao > h3, h4 {
 }
 
 footer > p {
+  background-image: linear-gradient(to bottom, var(--destaque), var(--destaque-inverso));
   background-color: var(--destaque);
   color: var(--texto-inverso);
   text-align: center;
@@ -258,6 +258,21 @@ footer > p > a {
 }
 
 @media screen and (min-width: 768px) {
+  main {
+    grid-template-columns: auto 350px 1fr auto;
+  }
+
+  section#ficha {
+    grid-column: 2 / 3;
+    height: fit-content;
+    position: sticky;
+    top: 74px;
+  }
+
+  section#detalhes {
+    grid-column: 3 / 4;
+  }
+
   #skill-container {
     grid-template-columns: 1fr 1fr;
   }
@@ -278,7 +293,11 @@ footer > p > a {
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1350px) {
+  main {
+    grid-template-columns: 300px 350px 1fr 300px;
+  }
+
   #skill-container {
     grid-template-columns: 1fr 1fr 1fr;
   }
